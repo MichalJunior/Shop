@@ -67,7 +67,7 @@ public class GUI {
         System.out.print("Number of products?:");
     }
     public static void unsuccesfullyBought(){
-        System.out.println("***  -----------  number higher than available  ----------- ***");
+        System.out.println(" -----------  number higher than available,try again ----------- ");
     }
 }
 

@@ -14,11 +14,7 @@ public class ShopApp {
                 case 2 -> productDB.buyProduct();
                 case 3 -> System.exit(0);
                 case 4 -> productDB.addProduct();
-
-
             }
-
-
         }
     }
 }

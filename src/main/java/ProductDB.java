@@ -2,7 +2,7 @@ import java.util.*;
 
 public class ProductDB {
     Scanner scanner = new Scanner(System.in);
-    // Scanner scanner2 = new Scanner(System.in);
+    Scanner scanner2 = new Scanner(System.in);
     HashMap<Product, Integer> availableProducts = new HashMap<>();
 
     public void viewListOfAvailableProducts() {
@@ -33,27 +33,33 @@ public class ProductDB {
         GUI.printProductsPanel();
         switch (scanner.nextInt()) {
             case 1 -> {
-                Product.COMPUTER.quantity++;
+                GUI.askUserForQuantity();
+                Product.COMPUTER.quantity += scanner2.nextInt();
                 GUI.printAddComputer();
             }
             case 2 -> {
-                Product.MOUSE.quantity++;
+                GUI.askUserForQuantity();
+                Product.MOUSE.quantity += scanner2.nextInt();
                 GUI.printAddMouse();
             }
             case 3 -> {
-                Product.KEYBOARD.quantity++;
+                GUI.askUserForQuantity();
+                Product.KEYBOARD.quantity += scanner2.nextInt();
                 GUI.printAddKeyboard();
             }
             case 4 -> {
-                Product.MONITOR.quantity++;
+                GUI.askUserForQuantity();
+                Product.MONITOR.quantity += scanner2.nextInt();
                 GUI.printAddMonitor();
             }
             case 5 -> {
-                Product.HARDRIVE.quantity++;
+                GUI.askUserForQuantity();
+                Product.HARDRIVE.quantity += scanner2.nextInt();
                 GUI.printAddHardrive();
             }
             case 6 -> {
-                Product.PENDRIVE.quantity++;
+                GUI.askUserForQuantity();
+                Product.PENDRIVE.quantity += scanner2.nextInt();
                 GUI.printAddPendrive();
             }
             default -> GUI.printNothingAdded();
