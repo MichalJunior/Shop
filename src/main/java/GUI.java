@@ -7,8 +7,8 @@ public class GUI {
                 +------MENU-----+
                 1.View list of products
                 2.Buy product
-                3.Exit
-                4.Add product
+                3.Add product
+                4.Exit
                 Insert your choice:\s""");
     }
 

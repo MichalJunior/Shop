@@ -6,14 +6,22 @@ public class ShopApp {
         Scanner scanner = new Scanner(System.in);
         ProductDB productDB = new ProductDB();
 
-            GUI.printIntroducing();
+        GUI.printIntroducing();
         while (true) {
             GUI.printMENU();
             switch (scanner.nextInt()) {
-                case 1 -> productDB.viewListOfAvailableProducts();
-                case 2 -> productDB.buyProduct();
-                case 3 -> System.exit(0);
-                case 4 -> productDB.addProduct();
+                case 1 ->productDB.printListOfAvailableProducts();
+                case 2 -> {
+                    GUI.printBuyAnnouncement();
+                    GUI.printProductsPanel();
+                    productDB.buyProduct();
+                }
+                case 3 -> {
+                    GUI.printAddingAnnouncement();
+                    GUI.printProductsPanel();
+                    productDB.addProduct();
+                }
+                case 4 -> System.exit(0);
             }
         }
     }

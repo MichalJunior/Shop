@@ -5,7 +5,7 @@ public class ProductDB {
     Scanner scanner2 = new Scanner(System.in);
     HashMap<Product, Integer> availableProducts = new HashMap<>();
 
-    public void viewListOfAvailableProducts() {
+    public void printListOfAvailableProducts() {
         if (Product.COMPUTER.quantity > 0) {
             availableProducts.put(Product.COMPUTER, Product.COMPUTER.quantity);
         }
@@ -24,13 +24,12 @@ public class ProductDB {
         if (Product.PENDRIVE.quantity > 0) {
             availableProducts.put(Product.PENDRIVE, Product.PENDRIVE.quantity);
         }
-        System.out.println(" Available products " + availableProducts);
+        System.out.println(availableProducts);
         availableProducts.clear();
     }
 
     public void addProduct() {
-        GUI.printAddingAnnouncement();
-        GUI.printProductsPanel();
+
         switch (scanner.nextInt()) {
             case 1 -> {
                 GUI.askUserForQuantity();
@@ -68,8 +67,7 @@ public class ProductDB {
 
     public void buyProduct() {
         Scanner scanner2 = new Scanner(System.in);
-        GUI.printBuyAnnouncement();
-        GUI.printProductsPanel();
+
 
         switch (scanner.nextInt()) {
             case 1 -> {
