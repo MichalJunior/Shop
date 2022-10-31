@@ -1,9 +1,8 @@
 import java.util.*;
-import java.util.function.BiFunction;
 
 public class ProductDB {
     Scanner scanner = new Scanner(System.in);
-    public static List<Product> productList = new ArrayList<>();
+    Scanner scanner2 = new Scanner(System.in);
     HashMap<Product, Integer> availableProducts = new HashMap<>();
 
     public void viewMapOfProducts() {
@@ -25,92 +24,95 @@ public class ProductDB {
         if (Product.PENDRIVE.quantity > 0) {
             availableProducts.put(Product.PENDRIVE, Product.PENDRIVE.quantity);
         }
+        System.out.println("/////Available products/////\n" + availableProducts);
     }
 
-//  public static Map<Product, Integer> productsAndQuantity = new HashMap<>();
+    public void addProduct() {
+        GUI.printAddingAnnouncement();
+        GUI.printProductsPanel();
+        switch (scanner.nextInt()) {
+            case 1 -> {
+                Product.COMPUTER.quantity++;
+                GUI.printAddComputer();
+            }
+            case 2 -> {
+                Product.MOUSE.quantity++;
+                GUI.printAddMouse();
+            }
+            case 3 -> {
+                Product.KEYBOARD.quantity++;
+                GUI.printAddKeyboard();
 
-////  ProductDB() {
-//   productList.add(Product.COMPUTER);
-//   productList.add(Product.MOUSE);
+            }
+            case 4 -> {
+                Product.MONITOR.quantity++;
+                GUI.printAddMonitor();
 
-//  }
-//    for (Product product : productList) {
-//        if (productList.contains(product)) {
-//            if (!productsAndQuantity.containsKey(product)) {
-//                productsAndQuantity.put(product, product.quantity++);
-//            }
-//            if (productsAndQuantity.containsKey(product)) {
-//
-//                productsAndQuantity.compute(product, (key, val)
-//                        -> (val == null) ? 1 : val + 1);
-//
-//            }
-//        }
-//
-//    }
-//    public void viewMapOfProducts() {
-//        Map<Product, Integer> productsAndQuantity = new HashMap<>();
-//        for (Product product:productList) {
-//            if(productList.contains(product)){
-//
-//            }
-//
-//        }
-//
-//        System.out.println(productList);
-//        System.out.println(productsAndQuantity);
-//
-//    }
+            }
+            case 5 -> {
+                Product.HARDRIVE.quantity++;
+                GUI.printAddHardrive();
 
-//// public Map<Product, Integer> buyProduct() {
+            }
+            case 6 -> {
+                Product.PENDRIVE.quantity++;
+                GUI.printAddPendrive();
 
-// }
+            }
+            default -> GUI.printNothingAdded();
+        }
 
-//    public void addProduct() {
-//        GUI.printAddingPanel();
-//        switch (scanner.nextInt()) {
-//            case 1 -> {
-//                productList.add(Product.COMPUTER);
-//                GUI.printAddComputer();
-//            }
-//            case 2 -> {
-//                productList.add(Product.MOUSE);
-//                GUI.printAddMouse();
-//            }
-//            case 3 -> {
-//                productList.add(Product.KEYBOARD);
-//                GUI.printAddKeyboard();
-//
-//            }
-//            case 4 -> {
-//                productList.add(Product.MONITOR);
-//                GUI.printAddMonitor();
-//
-//            }
-//            case 5 -> {
-//                productList.add(Product.HARDRIVE);
-//                GUI.printAddHardrive();
-//
-//            }
-//            case 6 -> {
-//                productList.add(Product.PENDRIVE);
-//                GUI.printAddPendrive();
-//
-//            }
-//            default -> GUI.printNothingAdded();
-//        }
-//
-//    }
+    }
+    public void buyProduct() {
+        GUI.printBuyAnnouncement();
+        GUI.printProductsPanel();
+        switch (scanner.nextInt()) {
+            case 1 -> {
+                Product.COMPUTER.quantity--;
+                GUI.printBoughtComputer();
+            }
+            case 2 -> {
+                Product.MOUSE.quantity--;
+                GUI.printBoughtMouse();
+            }
+            case 3 -> {
+                Product.KEYBOARD.quantity--;
+                GUI.printBoughtKeyboard();
+
+            }
+            case 4 -> {
+                Product.MONITOR.quantity--;
+                GUI.printBoughtMonitor();
+
+            }
+            case 5 -> {
+                Product.HARDRIVE.quantity--;
+                GUI.printBoughtHardrive();
+
+            }
+            case 6 -> {
+                Product.PENDRIVE.quantity--;
+                GUI.printBoughtPendrive();
+
+            }
+
+
+
+
+        }
+
+    }
+
 
     public enum Product {
-        COMPUTER(5000, 123, 0),
+        COMPUTER(5000, 123, 3),
         MOUSE(120, 123, 0),
-        KEYBOARD(300, 124, 0),
+        KEYBOARD(300, 124, 5),
         MONITOR(600, 125, 0),
         HARDRIVE(800, 126, 0),
         PENDRIVE(30, 127, 0);
-        int prize;
-        int keyProduct;
+        final int prize;
+        final int keyProduct;
         int quantity;
 
 

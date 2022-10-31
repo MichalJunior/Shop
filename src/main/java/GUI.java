@@ -1,7 +1,7 @@
 public class GUI {
     public static void printMENU() {
         System.out.print("""
-                -----welcome in my computer shop-----\s
+                -----Welcome in my virtual shop-----\s
                 1.View list of products
                 2.Buy product
                 3.Exit
@@ -9,9 +9,8 @@ public class GUI {
                 Insert your choice:\s""");
     }
 
-    public static void printAddingPanel() {
+    public static void printProductsPanel() {
         System.out.print("""
-                What product would you add?
                 1.computer
                 2.mouse
                 3.keyboard
@@ -19,6 +18,10 @@ public class GUI {
                 5.hardrive
                 6.pendrive
                 Insert your choice:""");
+    }
+
+    public static void printAddingAnnouncement() {
+        System.out.println("-----What product would you add?-----");
     }
 
     public static void printAddComputer() {
@@ -50,4 +53,32 @@ public class GUI {
     }
 
 
+    public static void printBuyAnnouncement() {
+        System.out.println("--- what product would you buy? ---");
+    }
+
+    public static void printBoughtComputer() {
+        System.out.println("Successfully Bought Computer");
+    }
+
+    public static void printBoughtMouse() {
+        System.out.println("Successfully Bought Mouse");
+    }
+
+    public static void printBoughtKeyboard() {
+        System.out.println("Successfully Bought Keyboard");
+    }
+
+    public static void printBoughtMonitor() {
+        System.out.println("Successfully Bought Monitor");
+    }
+
+    public static void printBoughtHardrive() {
+        System.out.println("Successfully Bought Hardrive");
+    }
+
+    public static void printBoughtPendrive() {
+        System.out.println("Successfully Bought Pendrive");
+    }
 }
+

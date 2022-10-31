@@ -13,16 +13,10 @@ public class ShopApp {
         while (true) {
             GUI.printMENU();
             switch (scanner.nextInt()) {
-                case 1 -> {
-                   productDB.viewMapOfProducts();
-                  //  System.out.println(productDB.buyProduct());
-                }
-                case 2 -> {
-                  //  String choice = scanner2.nextLine();
-                   // productDB.buyProduct();
-                }
+                case 1 -> productDB.viewMapOfProducts();
+                case 2 -> productDB.buyProduct();
                 case 3 -> System.exit(0);
-               // case 4 -> productDB.addProduct();
+                case 4 -> productDB.addProduct();
 
 
             }
