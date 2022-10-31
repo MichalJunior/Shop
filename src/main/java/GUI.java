@@ -1,7 +1,10 @@
 public class GUI {
+    public static void printIntroducing(){
+        System.out.println("-----------------Welcome in my virtual shop--------------");
+    }
     public static void printMENU() {
         System.out.print("""
-                -----Welcome in my virtual shop-----\s
+                +------MENU-----+
                 1.View list of products
                 2.Buy product
                 3.Exit
@@ -57,28 +60,14 @@ public class GUI {
         System.out.println("--- what product would you buy? ---");
     }
 
-    public static void printBoughtComputer() {
-        System.out.println("Successfully Bought Computer");
+    public static void printSuccesfullyBought(String nameProduct, int quantity, int result) {
+        System.out.println("Successfully Bought " + nameProduct + " x" + quantity + " = " + result + "PLN");
     }
-
-    public static void printBoughtMouse() {
-        System.out.println("Successfully Bought Mouse");
+    public static void askUserForQuantity() {
+        System.out.print("Number of products?:");
     }
-
-    public static void printBoughtKeyboard() {
-        System.out.println("Successfully Bought Keyboard");
-    }
-
-    public static void printBoughtMonitor() {
-        System.out.println("Successfully Bought Monitor");
-    }
-
-    public static void printBoughtHardrive() {
-        System.out.println("Successfully Bought Hardrive");
-    }
-
-    public static void printBoughtPendrive() {
-        System.out.println("Successfully Bought Pendrive");
+    public static void unsuccesfullyBought(){
+        System.out.println("***  -----------  number higher than available  ----------- ***");
     }
 }
 

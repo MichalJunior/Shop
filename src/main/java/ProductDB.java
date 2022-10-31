@@ -2,10 +2,10 @@ import java.util.*;
 
 public class ProductDB {
     Scanner scanner = new Scanner(System.in);
-    Scanner scanner2 = new Scanner(System.in);
+    // Scanner scanner2 = new Scanner(System.in);
     HashMap<Product, Integer> availableProducts = new HashMap<>();
 
-    public void viewMapOfProducts() {
+    public void viewListOfAvailableProducts() {
         if (Product.COMPUTER.quantity > 0) {
             availableProducts.put(Product.COMPUTER, Product.COMPUTER.quantity);
         }
@@ -24,7 +24,8 @@ public class ProductDB {
         if (Product.PENDRIVE.quantity > 0) {
             availableProducts.put(Product.PENDRIVE, Product.PENDRIVE.quantity);
         }
-        System.out.println("/////Available products/////\n" + availableProducts);
+        System.out.println(" Available products " + availableProducts);
+        availableProducts.clear();
     }
 
     public void addProduct() {
@@ -42,67 +43,82 @@ public class ProductDB {
             case 3 -> {
                 Product.KEYBOARD.quantity++;
                 GUI.printAddKeyboard();
-
             }
             case 4 -> {
                 Product.MONITOR.quantity++;
                 GUI.printAddMonitor();
-
             }
             case 5 -> {
                 Product.HARDRIVE.quantity++;
                 GUI.printAddHardrive();
-
             }
             case 6 -> {
                 Product.PENDRIVE.quantity++;
                 GUI.printAddPendrive();
-
             }
             default -> GUI.printNothingAdded();
         }
-
     }
+
     public void buyProduct() {
+        Scanner scanner2 = new Scanner(System.in);
         GUI.printBuyAnnouncement();
         GUI.printProductsPanel();
+
         switch (scanner.nextInt()) {
             case 1 -> {
-                Product.COMPUTER.quantity--;
-                GUI.printBoughtComputer();
+                GUI.askUserForQuantity();
+                int quantity = scanner2.nextInt();
+                if (quantity <= Product.COMPUTER.quantity) {
+                    Product.COMPUTER.quantity -= quantity;
+                    GUI.printSuccesfullyBought("computer", quantity, quantity * Product.COMPUTER.prize);
+                } else GUI.unsuccesfullyBought();
             }
             case 2 -> {
-                Product.MOUSE.quantity--;
-                GUI.printBoughtMouse();
+                GUI.askUserForQuantity();
+                int quantity = scanner2.nextInt();
+                if (quantity <= Product.MOUSE.quantity) {
+                    Product.MOUSE.quantity -= quantity;
+                    GUI.printSuccesfullyBought("mouse", quantity, quantity * Product.MOUSE.prize);
+                } else GUI.unsuccesfullyBought();
             }
             case 3 -> {
-                Product.KEYBOARD.quantity--;
-                GUI.printBoughtKeyboard();
-
+                GUI.askUserForQuantity();
+                int quantity = scanner2.nextInt();
+                if (quantity <= Product.KEYBOARD.quantity) {
+                    Product.KEYBOARD.quantity -= quantity;
+                    GUI.printSuccesfullyBought("keyboard", quantity, quantity * Product.KEYBOARD.prize);
+                } else GUI.unsuccesfullyBought();
             }
             case 4 -> {
-                Product.MONITOR.quantity--;
-                GUI.printBoughtMonitor();
-
+                GUI.askUserForQuantity();
+                int quantity = scanner2.nextInt();
+                if (quantity <= Product.MONITOR.quantity) {
+                    Product.MONITOR.quantity -= quantity;
+                    GUI.printSuccesfullyBought("monitor", quantity, quantity * Product.MONITOR.prize);
+                } else GUI.unsuccesfullyBought();
             }
             case 5 -> {
-                Product.HARDRIVE.quantity--;
-                GUI.printBoughtHardrive();
-
+                GUI.askUserForQuantity();
+                int quantity = scanner2.nextInt();
+                if (quantity <= Product.HARDRIVE.quantity) {
+                    Product.HARDRIVE.quantity -= quantity;
+                    GUI.printSuccesfullyBought("hardrive", quantity, quantity * Product.HARDRIVE.prize);
+                } else GUI.unsuccesfullyBought();
             }
             case 6 -> {
-                Product.PENDRIVE.quantity--;
-                GUI.printBoughtPendrive();
+                GUI.askUserForQuantity();
+                int quantity = scanner2.nextInt();
+                if (quantity <= Product.PENDRIVE.quantity) {
+                    Product.PENDRIVE.quantity -= quantity;
+                    GUI.printSuccesfullyBought("pendrive", quantity, quantity * Product.PENDRIVE.prize);
+                } else GUI.unsuccesfullyBought();
 
             }
 
-
-
-
+            default -> System.out.println("--Wrong credentials--");
         }
-
     }
-
 
     public enum Product {
         COMPUTER(5000, 123, 3),
@@ -110,7 +126,7 @@ public class ProductDB {
         KEYBOARD(300, 124, 5),
         MONITOR(600, 125, 0),
         HARDRIVE(800, 126, 0),
-        PENDRIVE(30, 127, 0);
+        PENDRIVE(30, 127, 10);
         final int prize;
         final int keyProduct;
         int quantity;
