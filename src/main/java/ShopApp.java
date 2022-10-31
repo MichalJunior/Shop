@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class ShopApp {
@@ -7,15 +9,20 @@ public class ShopApp {
         Scanner scanner2 = new Scanner(System.in);
         ProductDB productDB = new ProductDB();
 
+
         while (true) {
             GUI.printMENU();
             switch (scanner.nextInt()) {
                 case 1 -> {
-                    System.out.println(productDB.viewListOfProducts());
+                   productDB.viewMapOfProducts();
+                  //  System.out.println(productDB.buyProduct());
                 }
-                case 2 -> productDB.buyProduct();
+                case 2 -> {
+                  //  String choice = scanner2.nextLine();
+                   // productDB.buyProduct();
+                }
                 case 3 -> System.exit(0);
-                case 4 -> productDB.addProduct();
+               // case 4 -> productDB.addProduct();
 
 
             }
