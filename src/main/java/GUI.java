@@ -7,7 +7,7 @@ public class GUI {
 
     public static void printMENU() {
         System.out.print("""
-                +------MENU-----+
+                +----------------------------MENU---------------------------+
                 1.View list of products
                 2.Buy product
                 3.Add product
@@ -38,25 +38,6 @@ public class GUI {
         System.out.println("+++"+product+" added to shop+++");
     }
 
-//    public static void printAddMouse() {
-//        System.out.println("+++mouse added to shop+++");
-//    }
-//
-//    public static void printAddKeyboard() {
-//        System.out.println("+++keyboard added to shop+++");
-//    }
-//
-//    public static void printAddMonitor() {
-//        System.out.println("+++monitor added to shop+++");
-//    }
-//
-//    public static void printAddHardrive() {
-//        System.out.println("+++hardrive added to shop+++");
-//    }
-//
-//    public static void printAddPendrive() {
-//        System.out.println("+++pendrive added to shop+++");
-//    }
 
     public static void printNothingAdded() {
         System.out.println("---Nothing added---");
@@ -67,7 +48,7 @@ public class GUI {
         System.out.println("--- what product would you buy? ---");
     }
 
-    public static void printSuccesfullyBought(String nameProduct, int quantity, int result) {
+    public static void printSuccessfullyBought(String nameProduct, int quantity, int result) {
         System.out.println("Successfully Bought " + nameProduct + " x " + quantity + " = " + result + "PLN");
     }
 

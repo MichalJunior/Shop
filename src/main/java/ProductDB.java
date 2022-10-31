@@ -74,7 +74,7 @@ public class ProductDB {
                 int chosenQuantity = scanner2.nextInt();
                 if (chosenQuantity <= Product.COMPUTER.quantity) {
                     Product.COMPUTER.quantity -= chosenQuantity;
-                    GUI.printSuccesfullyBought("computer", chosenQuantity, chosenQuantity * Product.COMPUTER.prize);
+                    GUI.printSuccessfullyBought(Product.COMPUTER.name(), chosenQuantity, chosenQuantity * Product.COMPUTER.prize);
                 } else GUI.unsuccessfullyBought();
             }
             case 2 -> {
@@ -82,7 +82,7 @@ public class ProductDB {
                 int chosenQuantity = scanner2.nextInt();
                 if (chosenQuantity <= Product.MOUSE.quantity) {
                     Product.MOUSE.quantity -= chosenQuantity;
-                    GUI.printSuccesfullyBought("mouse", chosenQuantity, chosenQuantity * Product.MOUSE.prize);
+                    GUI.printSuccessfullyBought(Product.MOUSE.name(), chosenQuantity, chosenQuantity * Product.MOUSE.prize);
                 } else GUI.unsuccessfullyBought();
             }
             case 3 -> {
@@ -90,7 +90,7 @@ public class ProductDB {
                 int chosenQuantity = scanner2.nextInt();
                 if (chosenQuantity <= Product.KEYBOARD.quantity) {
                     Product.KEYBOARD.quantity -= chosenQuantity;
-                    GUI.printSuccesfullyBought("keyboard", chosenQuantity, chosenQuantity * Product.KEYBOARD.prize);
+                    GUI.printSuccessfullyBought(Product.KEYBOARD.name(), chosenQuantity, chosenQuantity * Product.KEYBOARD.prize);
                 } else GUI.unsuccessfullyBought();
             }
             case 4 -> {
@@ -98,7 +98,7 @@ public class ProductDB {
                 int chosenQuantity = scanner2.nextInt();
                 if (chosenQuantity <= Product.MONITOR.quantity) {
                     Product.MONITOR.quantity -= chosenQuantity;
-                    GUI.printSuccesfullyBought("monitor", chosenQuantity, chosenQuantity * Product.MONITOR.prize);
+                    GUI.printSuccessfullyBought(Product.MONITOR.name(), chosenQuantity, chosenQuantity * Product.MONITOR.prize);
                 } else GUI.unsuccessfullyBought();
             }
             case 5 -> {
@@ -106,7 +106,7 @@ public class ProductDB {
                 int chosenQuantity = scanner2.nextInt();
                 if (chosenQuantity <= Product.HARDRIVE.quantity) {
                     Product.HARDRIVE.quantity -= chosenQuantity;
-                    GUI.printSuccesfullyBought("hardrive", chosenQuantity, chosenQuantity * Product.HARDRIVE.prize);
+                    GUI.printSuccessfullyBought(Product.HARDRIVE.name(), chosenQuantity, chosenQuantity * Product.HARDRIVE.prize);
                 } else GUI.unsuccessfullyBought();
             }
             case 6 -> {
@@ -114,7 +114,7 @@ public class ProductDB {
                 int chosenQuantity = scanner2.nextInt();
                 if (chosenQuantity <= Product.PENDRIVE.quantity) {
                     Product.PENDRIVE.quantity -= chosenQuantity;
-                    GUI.printSuccesfullyBought("pendrive", chosenQuantity, chosenQuantity * Product.PENDRIVE.prize);
+                    GUI.printSuccessfullyBought(Product.PENDRIVE.name(), chosenQuantity, chosenQuantity * Product.PENDRIVE.prize);
                 } else GUI.unsuccessfullyBought();
 
             }
